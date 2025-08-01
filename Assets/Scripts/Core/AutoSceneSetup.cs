@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-using CaminosDeLaFe.UI;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Systems;
-using CaminosDeLaFe.Inventory;
+using CaminoDeLaFe.UI;
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Systems;
+using CaminoDeLaFe.Inventory;
 
-namespace CaminosDeLaFe.Core
+namespace CaminoDeLaFe.Core
 {
     /// <summary>
     /// Configuración automática de la escena principal del juego
@@ -390,7 +390,7 @@ namespace CaminosDeLaFe.Core
                 faithPassGO.transform.SetParent(monetizationRoot.transform);
                 
                 // Note: Will need to uncomment when assembly references are fixed
-                // faithPassGO.AddComponent<CaminosDeLaFe.Monetization.FaithPassSystem>();
+                // faithPassGO.AddComponent<CaminoDeLaFe.Monetization.FaithPassSystem>();
                 Debug.Log("🎯 Faith Pass System placeholder created");
             }
             
@@ -401,7 +401,7 @@ namespace CaminosDeLaFe.Core
                 adSystemGO.transform.SetParent(monetizationRoot.transform);
                 
                 // Note: Will need to uncomment when assembly references are fixed
-                // adSystemGO.AddComponent<CaminosDeLaFe.Monetization.AdvertisingSystem>();
+                // adSystemGO.AddComponent<CaminoDeLaFe.Monetization.AdvertisingSystem>();
                 Debug.Log("🎯 Advertising System placeholder created");
             }
             
@@ -412,7 +412,7 @@ namespace CaminosDeLaFe.Core
                 economyGO.transform.SetParent(monetizationRoot.transform);
                 
                 // Note: Will need to uncomment when assembly references are fixed
-                // economyGO.AddComponent<CaminosDeLaFe.Monetization.EconomySystem>();
+                // economyGO.AddComponent<CaminoDeLaFe.Monetization.EconomySystem>();
                 Debug.Log("🎯 Economy System placeholder created");
             }
             
@@ -423,7 +423,7 @@ namespace CaminosDeLaFe.Core
                 limitsGO.transform.SetParent(monetizationRoot.transform);
                 
                 // Note: Will need to uncomment when assembly references are fixed
-                // limitsGO.AddComponent<CaminosDeLaFe.Monetization.DailyLimitsSystem>();
+                // limitsGO.AddComponent<CaminoDeLaFe.Monetization.DailyLimitsSystem>();
                 Debug.Log("🎯 Daily Limits System placeholder created");
             }
             
@@ -431,7 +431,7 @@ namespace CaminosDeLaFe.Core
             if (monetizationRoot.GetComponent<MonoBehaviour>() == null)
             {
                 // Note: Will need to uncomment when assembly references are fixed
-                // monetizationRoot.AddComponent<CaminosDeLaFe.Monetization.MonetizationManager>();
+                // monetizationRoot.AddComponent<CaminoDeLaFe.Monetization.MonetizationManager>();
                 Debug.Log("🎯 Monetization Manager placeholder created");
             }
             

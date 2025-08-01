@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using CaminosDeLaFe.Entities;
-using CaminosDeLaFe.Systems;
+using CaminoDeLaFe.Entities;
+using CaminoDeLaFe.Systems;
 
-namespace CaminosDeLaFe.UI
+namespace CaminoDeLaFe.UI
 {
     /// <summary>
     /// Main game UI controller

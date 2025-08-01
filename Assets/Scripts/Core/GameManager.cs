@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Entities;
-using CaminosDeLaFe.UI;
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Entities;
+using CaminoDeLaFe.UI;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Core
+namespace CaminoDeLaFe.Core
 {
     /// <summary>
     /// Main game controller that manages game states and scene transitions

@@ -1,8 +1,8 @@
 using UnityEngine;
-using CaminosDeLaFe.Data;
+using CaminoDeLaFe.Data;
 using System.Collections;
 
-namespace CaminosDeLaFe.Entities
+namespace CaminoDeLaFe.Entities
 {
     /// <summary>
     /// Basic enemy AI and behavior

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
-namespace CaminosDeLaFe.Systems
+namespace CaminoDeLaFe.Systems
 {
     /// <summary>
     /// Manages player statistics and bonuses

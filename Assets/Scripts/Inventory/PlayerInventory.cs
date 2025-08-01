@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CaminosDeLaFe.Inventory
+namespace CaminoDeLaFe.Inventory
 {
     /// <summary>
     /// Represents a stack of items in the inventory
@@ -10,10 +10,10 @@ namespace CaminosDeLaFe.Inventory
     [System.Serializable]
     public class ItemStack
     {
-        public CaminosDeLaFe.Items.Item item;
+        public CaminoDeLaFe.Items.Item item;
         public int quantity;
         
-        public ItemStack(CaminosDeLaFe.Items.Item item, int quantity = 1)
+        public ItemStack(CaminoDeLaFe.Items.Item item, int quantity = 1)
         {
             this.item = item;
             this.quantity = Mathf.Clamp(quantity, 0, item.maxStackSize);
@@ -71,23 +71,23 @@ namespace CaminosDeLaFe.Inventory
     {
         [Header("Inventory Settings")]
         public int maxSlots = 30;
-        public Dictionary<CaminosDeLaFe.Items.EquipmentSlot, CaminosDeLaFe.Items.Equipment> equippedItems;
+        public Dictionary<CaminoDeLaFe.Items.EquipmentSlot, CaminoDeLaFe.Items.Equipment> equippedItems;
         public List<ItemStack> inventorySlots;
         
         // Events
         public System.Action<ItemStack, int> OnItemAdded;
         public System.Action<ItemStack, int> OnItemRemoved;
-        public System.Action<CaminosDeLaFe.Items.Equipment, CaminosDeLaFe.Items.EquipmentSlot> OnItemEquipped;
-        public System.Action<CaminosDeLaFe.Items.Equipment, CaminosDeLaFe.Items.EquipmentSlot> OnItemUnequipped;
+        public System.Action<CaminoDeLaFe.Items.Equipment, CaminoDeLaFe.Items.EquipmentSlot> OnItemEquipped;
+        public System.Action<CaminoDeLaFe.Items.Equipment, CaminoDeLaFe.Items.EquipmentSlot> OnItemUnequipped;
         public System.Action OnInventoryChanged;
         
-        private CaminosDeLaFe.Entities.Player owner;
+        private CaminoDeLaFe.Entities.Player owner;
         
-        public PlayerInventory(CaminosDeLaFe.Entities.Player owner, int maxSlots = 30)
+        public PlayerInventory(CaminoDeLaFe.Entities.Player owner, int maxSlots = 30)
         {
             this.owner = owner;
             this.maxSlots = maxSlots;
-            this.equippedItems = new Dictionary<CaminosDeLaFe.Items.EquipmentSlot, CaminosDeLaFe.Items.Equipment>();
+            this.equippedItems = new Dictionary<CaminoDeLaFe.Items.EquipmentSlot, CaminoDeLaFe.Items.Equipment>();
             this.inventorySlots = new List<ItemStack>();
             
             // Initialize inventory slots
@@ -102,7 +102,7 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Add an item to the inventory
         /// </summary>
-        public bool AddItem(CaminosDeLaFe.Items.Item item, int quantity = 1)
+        public bool AddItem(CaminoDeLaFe.Items.Item item, int quantity = 1)
         {
             if (item == null || quantity <= 0)
                 return false;
@@ -154,7 +154,7 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Remove an item from the inventory
         /// </summary>
-        public bool RemoveItem(CaminosDeLaFe.Items.Item item, int quantity = 1)
+        public bool RemoveItem(CaminoDeLaFe.Items.Item item, int quantity = 1)
         {
             if (item == null || quantity <= 0)
                 return false;
@@ -200,13 +200,13 @@ namespace CaminosDeLaFe.Inventory
             if (stack == null || stack.IsEmpty())
                 return false;
             
-            CaminosDeLaFe.Items.Item item = stack.item;
+            CaminoDeLaFe.Items.Item item = stack.item;
             
             // Try to use the item
             if (item.Use(owner))
             {
                 // If it's a consumable, remove one from the stack
-                if (item is CaminosDeLaFe.Items.Consumable)
+                if (item is CaminoDeLaFe.Items.Consumable)
                 {
                     stack.RemoveItems(1);
                     OnItemRemoved?.Invoke(stack, 1);
@@ -219,7 +219,7 @@ namespace CaminosDeLaFe.Inventory
                     OnInventoryChanged?.Invoke();
                 }
                 // If it's equipment, try to equip it
-                else if (item is CaminosDeLaFe.Items.Equipment equipment)
+                else if (item is CaminoDeLaFe.Items.Equipment equipment)
                 {
                     return EquipItem(equipment, slotIndex);
                 }
@@ -233,7 +233,7 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Get the total quantity of a specific item
         /// </summary>
-        public int GetItemCount(CaminosDeLaFe.Items.Item item)
+        public int GetItemCount(CaminoDeLaFe.Items.Item item)
         {
             int total = 0;
             foreach (ItemStack stack in inventorySlots)
@@ -249,7 +249,7 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Check if inventory has enough of an item
         /// </summary>
-        public bool HasItem(CaminosDeLaFe.Items.Item item, int quantity = 1)
+        public bool HasItem(CaminoDeLaFe.Items.Item item, int quantity = 1)
         {
             return GetItemCount(item) >= quantity;
         }
@@ -270,7 +270,7 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Get all items of a specific type
         /// </summary>
-        public List<ItemStack> GetItemsByType<T>() where T : CaminosDeLaFe.Items.Item
+        public List<ItemStack> GetItemsByType<T>() where T : CaminoDeLaFe.Items.Item
         {
             List<ItemStack> result = new List<ItemStack>();
             foreach (ItemStack stack in inventorySlots)
@@ -290,12 +290,12 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Equip an item
         /// </summary>
-        public bool EquipItem(CaminosDeLaFe.Items.Equipment equipment, int inventorySlot = -1)
+        public bool EquipItem(CaminoDeLaFe.Items.Equipment equipment, int inventorySlot = -1)
         {
             if (equipment == null || !equipment.CanUse(owner))
                 return false;
             
-            CaminosDeLaFe.Items.EquipmentSlot slot = equipment.equipmentSlot;
+            CaminoDeLaFe.Items.EquipmentSlot slot = equipment.equipmentSlot;
             
             // Unequip current item in that slot
             if (equippedItems.ContainsKey(slot) && equippedItems[slot] != null)
@@ -333,12 +333,12 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Unequip an item
         /// </summary>
-        public bool UnequipItem(CaminosDeLaFe.Items.EquipmentSlot slot)
+        public bool UnequipItem(CaminoDeLaFe.Items.EquipmentSlot slot)
         {
             if (!equippedItems.ContainsKey(slot) || equippedItems[slot] == null)
                 return false;
             
-            CaminosDeLaFe.Items.Equipment equipment = equippedItems[slot];
+            CaminoDeLaFe.Items.Equipment equipment = equippedItems[slot];
             
             // Try to add back to inventory
             if (!AddItem(equipment))
@@ -363,9 +363,9 @@ namespace CaminosDeLaFe.Inventory
         /// <summary>
         /// Get equipped item in a specific slot
         /// </summary>
-        public CaminosDeLaFe.Items.Equipment GetEquippedItem(CaminosDeLaFe.Items.EquipmentSlot slot)
+        public CaminoDeLaFe.Items.Equipment GetEquippedItem(CaminoDeLaFe.Items.EquipmentSlot slot)
         {
-            equippedItems.TryGetValue(slot, out CaminosDeLaFe.Items.Equipment equipment);
+            equippedItems.TryGetValue(slot, out CaminoDeLaFe.Items.Equipment equipment);
             return equipment;
         }
         
@@ -379,7 +379,7 @@ namespace CaminosDeLaFe.Inventory
             
             foreach (var kvp in equippedItems)
             {
-                CaminosDeLaFe.Items.Equipment equipment = kvp.Value;
+                CaminoDeLaFe.Items.Equipment equipment = kvp.Value;
                 if (equipment != null)
                 {
                     foreach (var statBonus in equipment.statBonuses)
@@ -476,7 +476,7 @@ namespace CaminosDeLaFe.Inventory
             if (saveData != null)
             {
                 this.inventorySlots = saveData.inventorySlots ?? new List<ItemStack>();
-                this.equippedItems = saveData.equippedItems ?? new Dictionary<CaminosDeLaFe.Items.EquipmentSlot, CaminosDeLaFe.Items.Equipment>();
+                this.equippedItems = saveData.equippedItems ?? new Dictionary<CaminoDeLaFe.Items.EquipmentSlot, CaminoDeLaFe.Items.Equipment>();
                 
                 // Ensure correct size
                 while (inventorySlots.Count < maxSlots)
@@ -499,6 +499,6 @@ namespace CaminosDeLaFe.Inventory
     public class InventorySaveData
     {
         public List<ItemStack> inventorySlots;
-        public Dictionary<CaminosDeLaFe.Items.EquipmentSlot, CaminosDeLaFe.Items.Equipment> equippedItems;
+        public Dictionary<CaminoDeLaFe.Items.EquipmentSlot, CaminoDeLaFe.Items.Equipment> equippedItems;
     }
 }

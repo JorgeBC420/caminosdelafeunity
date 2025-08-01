@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using CaminosDeLaFe.Data;
+using CaminoDeLaFe.Data;
 
-namespace CaminosDeLaFe.Monetization
+namespace CaminoDeLaFe.Monetization
 {
     /// <summary>
     /// 🎯 FAITH PASS SYSTEM - $10/month Battle Pass

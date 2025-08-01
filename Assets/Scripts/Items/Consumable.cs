@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace CaminosDeLaFe.Items
+namespace CaminoDeLaFe.Items
 {
     /// <summary>
     /// Consumable items like potions, food, and scrolls
@@ -33,7 +33,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Use the consumable item
         /// </summary>
-        public override bool Use(CaminosDeLaFe.Entities.Player player)
+        public override bool Use(CaminoDeLaFe.Entities.Player player)
         {
             if (!CanUse(player))
                 return false;
@@ -68,7 +68,7 @@ namespace CaminosDeLaFe.Items
             }
         }
         
-        private bool UseHealthPotion(CaminosDeLaFe.Entities.Player player)
+        private bool UseHealthPotion(CaminoDeLaFe.Entities.Player player)
         {
             if (player.currentHealth >= player.stats.maxHealth)
             {
@@ -85,7 +85,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private bool UseManaPotion(CaminosDeLaFe.Entities.Player player)
+        private bool UseManaPotion(CaminoDeLaFe.Entities.Player player)
         {
             if (player.currentMana >= player.stats.maxMana)
             {
@@ -102,7 +102,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private bool UseStaminaPotion(CaminosDeLaFe.Entities.Player player)
+        private bool UseStaminaPotion(CaminoDeLaFe.Entities.Player player)
         {
             // For now, just boost movement speed temporarily
             if (duration > 0)
@@ -115,7 +115,7 @@ namespace CaminosDeLaFe.Items
             return false;
         }
         
-        private bool UseStatBoost(CaminosDeLaFe.Entities.Player player)
+        private bool UseStatBoost(CaminoDeLaFe.Entities.Player player)
         {
             // Temporary stat boost - would need a buff system to implement properly
             Debug.Log($"Stat boost effect: +{effectValue} for {duration} seconds");
@@ -123,7 +123,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private bool UseFood(CaminosDeLaFe.Entities.Player player)
+        private bool UseFood(CaminoDeLaFe.Entities.Player player)
         {
             // Food heals slowly over time
             if (duration > 0)
@@ -136,7 +136,7 @@ namespace CaminosDeLaFe.Items
             return UseHealthPotion(player); // Instant food acts like health potion
         }
         
-        private bool UseHerb(CaminosDeLaFe.Entities.Player player)
+        private bool UseHerb(CaminoDeLaFe.Entities.Player player)
         {
             // Herbs can cure status effects or provide minor boosts
             Debug.Log($"Herb used! Effect: {effectValue}");
@@ -144,7 +144,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private bool UseScroll(CaminosDeLaFe.Entities.Player player)
+        private bool UseScroll(CaminoDeLaFe.Entities.Player player)
         {
             // Scrolls have special magical effects
             Debug.Log($"Scroll activated! Magical effect: {effectValue}");
@@ -152,7 +152,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private void PlayUseEffects(CaminosDeLaFe.Entities.Player player)
+        private void PlayUseEffects(CaminoDeLaFe.Entities.Player player)
         {
             // Play sound effect
             if (useSound != null)
@@ -168,7 +168,7 @@ namespace CaminosDeLaFe.Items
             }
         }
         
-        private IEnumerator ApplyTemporarySpeedBoost(CaminosDeLaFe.Entities.Player player, float speedBoost, float duration)
+        private IEnumerator ApplyTemporarySpeedBoost(CaminoDeLaFe.Entities.Player player, float speedBoost, float duration)
         {
             float originalSpeed = player.moveSpeed;
             player.moveSpeed += speedBoost;
@@ -179,7 +179,7 @@ namespace CaminosDeLaFe.Items
             Debug.Log("Speed boost effect ended.");
         }
         
-        private IEnumerator ApplyHealOverTime(CaminosDeLaFe.Entities.Player player, float totalHealing, float duration)
+        private IEnumerator ApplyHealOverTime(CaminoDeLaFe.Entities.Player player, float totalHealing, float duration)
         {
             float healPerSecond = totalHealing / duration;
             float elapsed = 0f;

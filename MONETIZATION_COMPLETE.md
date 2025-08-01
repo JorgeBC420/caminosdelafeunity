@@ -127,8 +127,8 @@
 1. **Arreglar Assembly References**
    ```csharp
    // Crear Assembly Definition Files en Unity:
-   // - CaminosDeLaFe.Core.asmdef
-   // - CaminosDeLaFe.Monetization.asmdef
+   // - CaminoDeLaFe.Core.asmdef
+   // - CaminoDeLaFe.Monetization.asmdef
    // - Configurar dependencies correctamente
    ```
 

@@ -1,11 +1,11 @@
 using UnityEngine;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Systems;
-// using CaminosDeLaFe.Monetization; // TODO: Fix assembly references
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Systems;
+// using CaminoDeLaFe.Monetization; // TODO: Fix assembly references
 using System;
 using System.Collections;
 
-namespace CaminosDeLaFe.Entities
+namespace CaminoDeLaFe.Entities
 {
     /// <summary>
     /// Main player controller and data management
@@ -45,7 +45,7 @@ namespace CaminosDeLaFe.Entities
         public Faction faction { get; private set; }
         
         // TODO: Inventory System (to be added after Unity assembly references are fixed)
-        // private CaminosDeLaFe.Inventory.PlayerInventory _inventory;
+        // private CaminoDeLaFe.Inventory.PlayerInventory _inventory;
         
         // Events
         public event Action<int> OnHealthChanged;
@@ -312,7 +312,7 @@ namespace CaminosDeLaFe.Entities
             
             /* TODO: Uncomment when assembly references are fixed
             // Try to find daily limits system
-            var limitsSystem = FindFirstObjectByType<CaminosDeLaFe.Monetization.DailyLimitsSystem>();
+            var limitsSystem = FindFirstObjectByType<CaminoDeLaFe.Monetization.DailyLimitsSystem>();
             if (limitsSystem != null)
             {
                 // This uses the daily limits system we just created
@@ -323,7 +323,7 @@ namespace CaminosDeLaFe.Entities
                     Debug.Log($"💰 Daily gold limit reached! Only earned {actualAmount}/{amount} gold");
                     
                     // Show monetization options when limit is reached
-                    var monetizationManager = FindFirstObjectByType<CaminosDeLaFe.Monetization.MonetizationManager>();
+                    var monetizationManager = FindFirstObjectByType<CaminoDeLaFe.Monetization.MonetizationManager>();
                     if (monetizationManager != null)
                     {
                         Debug.Log("🎯 Showing monetization options for exceeded gold limit...");
@@ -332,7 +332,7 @@ namespace CaminosDeLaFe.Entities
             }
             
             // Apply Faith Pass gold bonus if active
-            var faithPassSystem = FindFirstObjectByType<CaminosDeLaFe.Monetization.FaithPassSystem>();
+            var faithPassSystem = FindFirstObjectByType<CaminoDeLaFe.Monetization.FaithPassSystem>();
             if (faithPassSystem != null && faithPassSystem.IsFaithPassActive())
             {
                 actualAmount = Mathf.RoundToInt(actualAmount * faithPassSystem.GetGoldMultiplier());
@@ -357,7 +357,7 @@ namespace CaminosDeLaFe.Entities
             
             /* TODO: Uncomment when assembly references are fixed
             // Apply Faith Pass XP bonus if active
-            var faithPassSystem = FindFirstObjectByType<CaminosDeLaFe.Monetization.FaithPassSystem>();
+            var faithPassSystem = FindFirstObjectByType<CaminoDeLaFe.Monetization.FaithPassSystem>();
             if (faithPassSystem != null && faithPassSystem.IsFaithPassActive())
             {
                 actualAmount = Mathf.RoundToInt(actualAmount * faithPassSystem.GetXPMultiplier());
@@ -384,7 +384,7 @@ namespace CaminosDeLaFe.Entities
                 
                 /* TODO: Uncomment when assembly references are fixed
                 // Update daily limits when leveling up
-                var limitsSystem = FindFirstObjectByType<CaminosDeLaFe.Monetization.DailyLimitsSystem>();
+                var limitsSystem = FindFirstObjectByType<CaminoDeLaFe.Monetization.DailyLimitsSystem>();
                 if (limitsSystem != null)
                 {
                     limitsSystem.UpdateLimitsBasedOnLevel();

@@ -1,9 +1,9 @@
 using UnityEngine;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Entities;
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Entities;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Systems
+namespace CaminoDeLaFe.Systems
 {
     /// <summary>
     /// Auto combat system for calculating battle outcomes

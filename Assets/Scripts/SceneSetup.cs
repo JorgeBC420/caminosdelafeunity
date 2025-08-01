@@ -1,7 +1,7 @@
 using UnityEngine;
-using CaminosDeLaFe.Core;
+using CaminoDeLaFe.Core;
 
-namespace CaminosDeLaFe
+namespace CaminoDeLaFe
 {
     /// <summary>
     /// Scene setup script - attach this to an empty GameObject in your main scene

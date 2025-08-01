@@ -1,10 +1,10 @@
 using UnityEngine;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Items;
-using CaminosDeLaFe.Inventory;
-using CaminosDeLaFe.Systems;
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Items;
+using CaminoDeLaFe.Inventory;
+using CaminoDeLaFe.Systems;
 
-namespace CaminosDeLaFe.Core
+namespace CaminoDeLaFe.Core
 {
     /// <summary>
     /// Sistema de testing y debug para verificar que todos los sistemas funcionan correctamente

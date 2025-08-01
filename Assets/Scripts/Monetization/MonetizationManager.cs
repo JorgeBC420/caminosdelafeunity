@@ -1,7 +1,7 @@
 using UnityEngine;
-using CaminosDeLaFe.Data;
+using CaminoDeLaFe.Data;
 
-namespace CaminosDeLaFe.Monetization
+namespace CaminoDeLaFe.Monetization
 {
     /// <summary>
     /// 🎯 GAMES LAB MONETIZATION MANAGER

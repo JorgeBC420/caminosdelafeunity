@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Items
+namespace CaminoDeLaFe.Items
 {
     /// <summary>
     /// Equipment items that can be worn by the player
@@ -94,7 +94,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Check if this equipment can be equipped by the player
         /// </summary>
-        public override bool CanUse(CaminosDeLaFe.Entities.Player player)
+        public override bool CanUse(CaminoDeLaFe.Entities.Player player)
         {
             if (!base.CanUse(player))
                 return false;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CaminosDeLaFe.Core
+namespace CaminoDeLaFe.Core
 {
     public class AssemblyReferences : MonoBehaviour
     {
@@ -19,9 +19,9 @@ namespace CaminosDeLaFe.Core
             public Enemy enemy;
             
             [Header("Item Systems")]
-            public CaminosDeLaFe.Items.Item[] sampleItems;
-            public CaminosDeLaFe.Inventory.PlayerInventory playerInventory;
-            public CaminosDeLaFe.Systems.MountSystem mountSystem;
+            public CaminoDeLaFe.Items.Item[] sampleItems;
+            public CaminoDeLaFe.Inventory.PlayerInventory playerInventory;
+            public CaminoDeLaFe.Systems.MountSystem mountSystem;
         }
         
         [SerializeField] private SystemReferences references;

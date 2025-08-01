@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Data
+namespace CaminoDeLaFe.Data
 {
     /// <summary>
     /// Represents a faction in the game

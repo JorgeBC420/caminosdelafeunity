@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Items
+namespace CaminoDeLaFe.Items
 {
     /// <summary>
     /// Base class for all items in the game
@@ -33,7 +33,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Called when item is used/consumed
         /// </summary>
-        public virtual bool Use(CaminosDeLaFe.Entities.Player player)
+        public virtual bool Use(CaminoDeLaFe.Entities.Player player)
         {
             return false; // Base items cannot be used
         }
@@ -41,7 +41,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Check if player can use this item
         /// </summary>
-        public virtual bool CanUse(CaminosDeLaFe.Entities.Player player)
+        public virtual bool CanUse(CaminoDeLaFe.Entities.Player player)
         {
             // Level requirement
             if (player.level < levelRequirement)

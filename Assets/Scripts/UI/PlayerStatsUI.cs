@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using CaminosDeLaFe.Entities;
+using CaminoDeLaFe.Entities;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.UI
+namespace CaminoDeLaFe.UI
 {
     /// <summary>
     /// Player statistics UI panel

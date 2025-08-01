@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using CaminosDeLaFe.Data;
+using CaminoDeLaFe.Data;
 
-namespace CaminosDeLaFe.Monetization
+namespace CaminoDeLaFe.Monetization
 {
     /// <summary>
     /// 📺 ADVERTISING SYSTEM - Critical Revenue Stream

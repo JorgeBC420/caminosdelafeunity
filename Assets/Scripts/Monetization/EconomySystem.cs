@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using CaminosDeLaFe.Data;
+using CaminoDeLaFe.Data;
 
-namespace CaminosDeLaFe.Monetization
+namespace CaminoDeLaFe.Monetization
 {
     /// <summary>
     /// 💰 USD-GOLD ECONOMY SYSTEM

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace CaminosDeLaFe.Systems
+namespace CaminoDeLaFe.Systems
 {
     /// <summary>
     /// Mount/Horse system for player transportation and combat bonuses
@@ -158,7 +158,7 @@ namespace CaminosDeLaFe.Systems
                 statBonuses[statName] = bonus;
         }
         
-        public bool CanBeUsedBy(CaminosDeLaFe.Entities.Player player)
+        public bool CanBeUsedBy(CaminoDeLaFe.Entities.Player player)
         {
             // Level requirement
             if (player.level < levelRequirement)
@@ -232,7 +232,7 @@ namespace CaminosDeLaFe.Systems
         public Transform mountPoint; // Where the mount appears
         public GameObject currentMountObject;
         
-        private CaminosDeLaFe.Entities.Player player;
+        private CaminoDeLaFe.Entities.Player player;
         private float originalMoveSpeed;
         private bool wasMovingWhenMounted = false;
         
@@ -243,7 +243,7 @@ namespace CaminosDeLaFe.Systems
         
         void Awake()
         {
-            player = GetComponent<CaminosDeLaFe.Entities.Player>();
+            player = GetComponent<CaminoDeLaFe.Entities.Player>();
             ownedMounts = new List<Mount>();
             
             if (player != null)
@@ -407,7 +407,7 @@ namespace CaminosDeLaFe.Systems
             {
                 if (enemy.CompareTag("Enemy"))
                 {
-                    var enemyComponent = enemy.GetComponent<CaminosDeLaFe.Entities.Enemy>();
+                    var enemyComponent = enemy.GetComponent<CaminoDeLaFe.Entities.Enemy>();
                     if (enemyComponent != null)
                     {
                         enemyComponent.TakeDamage(currentMount.trampleDamage);

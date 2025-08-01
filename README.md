@@ -53,7 +53,7 @@ Un RPG medieval donde los jugadores eligen entre tres facciones históricas:
 
 ### 📦 **Arquitectura de Namespaces**
 ```
-CaminosDeLaFe/
+CaminoDeLaFe/
 ├── Core/           # Sistemas principales
 ├── Data/           # Configuración y datos
 ├── Entities/       # Player, Enemy, NPCs

@@ -1,11 +1,10 @@
 using UnityEngine;
 
-namespace CaminosDeLaFe.Data
+namespace CaminoDeLaFe.Data
 {
     /// <summary>
     /// Configuration settings for the game
     /// </summary>
-    [System.Serializable]
     public static class GameConfig
     {
         // Player Settings
@@ -129,7 +128,6 @@ namespace CaminosDeLaFe.Data
     /// <summary>
     /// Auto Combat specific configuration
     /// </summary>
-    [System.Serializable]
     public static class AutoCombatConfig
     {
         public const float LUCK_FACTOR_MIN = 0.8f;

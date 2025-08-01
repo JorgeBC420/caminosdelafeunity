@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using CaminosDeLaFe.Data;
-using CaminosDeLaFe.Core;
+using CaminoDeLaFe.Data;
+using CaminoDeLaFe.Core;
 
-namespace CaminosDeLaFe.UI
+namespace CaminoDeLaFe.UI
 {
     /// <summary>
     /// UI for faction selection screen

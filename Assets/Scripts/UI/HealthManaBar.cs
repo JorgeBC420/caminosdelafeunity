@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-namespace CaminosDeLaFe.UI
+namespace CaminoDeLaFe.UI
 {
     /// <summary>
     /// Health bar UI component

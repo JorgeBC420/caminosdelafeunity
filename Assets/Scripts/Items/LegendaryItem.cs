@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CaminosDeLaFe.Items
+namespace CaminoDeLaFe.Items
 {
     /// <summary>
     /// Legendary weapons with unique abilities and faction-specific powers
@@ -145,7 +145,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Use a legendary ability
         /// </summary>
-        public bool UseAbility(int abilityIndex, CaminosDeLaFe.Entities.Player user)
+        public bool UseAbility(int abilityIndex, CaminoDeLaFe.Entities.Player user)
         {
             if (abilityIndex < 0 || abilityIndex >= abilities.Length)
                 return false;
@@ -162,7 +162,7 @@ namespace CaminosDeLaFe.Items
             return true;
         }
         
-        private void ApplyAbilityEffect(LegendaryAbility ability, CaminosDeLaFe.Entities.Player user)
+        private void ApplyAbilityEffect(LegendaryAbility ability, CaminoDeLaFe.Entities.Player user)
         {
             switch (ability.name)
             {
@@ -173,7 +173,7 @@ namespace CaminosDeLaFe.Items
                     {
                         if (enemy.CompareTag("Enemy"))
                         {
-                            var enemyComponent = enemy.GetComponent<CaminosDeLaFe.Entities.Enemy>();
+                            var enemyComponent = enemy.GetComponent<CaminoDeLaFe.Entities.Enemy>();
                             if (enemyComponent != null)
                             {
                                 enemyComponent.TakeDamage(ability.power);
@@ -205,7 +205,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Attempt to purify the legendary item
         /// </summary>
-        public bool TryPurify(CaminosDeLaFe.Entities.Player purifier, Dictionary<string, int> materials)
+        public bool TryPurify(CaminoDeLaFe.Entities.Player purifier, Dictionary<string, int> materials)
         {
             if (!canBePurified || isPurified)
                 return false;
@@ -240,7 +240,7 @@ namespace CaminosDeLaFe.Items
         /// <summary>
         /// Attempt to steal this legendary item
         /// </summary>
-        public bool TrySteal(CaminosDeLaFe.Entities.Player thief, CaminosDeLaFe.Entities.Player victim)
+        public bool TrySteal(CaminoDeLaFe.Entities.Player thief, CaminoDeLaFe.Entities.Player victim)
         {
             if (!canBeStolen || isUnique)
                 return false;
@@ -263,7 +263,7 @@ namespace CaminosDeLaFe.Items
             }
         }
         
-        private float CalculateStealChance(CaminosDeLaFe.Entities.Player thief, CaminosDeLaFe.Entities.Player victim)
+        private float CalculateStealChance(CaminoDeLaFe.Entities.Player thief, CaminoDeLaFe.Entities.Player victim)
         {
             float baseChance = 0.1f; // 10% base chance
             
