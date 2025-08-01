@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Setup Caminos de la Fe Unity Project",
+			"type": "shell",
+			"command": "echo",
+			"args": [
+				"Project setup complete! Open Unity and load the project to begin development."
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
